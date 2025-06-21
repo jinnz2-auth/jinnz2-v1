@@ -1,0 +1,17 @@
+
+name: Upload to IPFS
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Upload file to IPFS
+        uses: aquiladev/ipfs-action@v0.3.0
+        with:
+          path: jinnz2-archive-1.zip
